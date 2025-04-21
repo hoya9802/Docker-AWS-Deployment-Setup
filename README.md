@@ -45,6 +45,8 @@ Note: After running the above, you need to logout by typing `exit` and re-connec
 
 Install Docker Compose:
 
+you can check various release version of docker compose [here](https://github.com/docker/compose).
+
 ```sh
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
