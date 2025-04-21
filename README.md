@@ -22,7 +22,7 @@ cat ~/.ssh/id_ed25519.pub
 
 ### Install and Configure Depdencies
 
-Use the below commands to configure the EC2 virtual machine running Amazon Linux 2.
+Use the below commands to configure the EC2 virtual machine running Amazon Linux 2 & Amazon Linux 2023.
 
 Install Git:
 
@@ -33,7 +33,9 @@ sudo yum install git -y
 Install Docker, make it auto start and give `ec2-user` permissions to use it:
 
 ```sh
-sudo amazon-linux-extras install docker -y
+sudo amazon-linux-extras install docker -y # AL2
+sudo dnf install docker -y # AL2023
+
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 sudo usermod -aG docker ec2-user
@@ -44,7 +46,7 @@ Note: After running the above, you need to logout by typing `exit` and re-connec
 Install Docker Compose:
 
 ```sh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
