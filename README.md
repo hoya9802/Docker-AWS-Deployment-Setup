@@ -75,6 +75,14 @@ To start the service, run:
 docker-compose -f docker-compose-deploy.yml up -d
 ```
 
+To generate the initial SSL certificates using Certbot, run the command below. This step is required before starting the server with HTTPS support:
+
+```sh
+docker-compose -f docker-compose-deploy.yml run --rm certbot /opt/certify-init.sh
+docker-compose -f docker-compose-deploy.yml down
+docker-compose -f docker-compose-deploy.yml up -d
+```
+
 ### Stopping Service
 
 To stop the service, run:
